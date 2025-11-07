@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loading</title>
+<link rel="stylesheet" href="/css/loading.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="icon">
+      <img src="/assets/loading-upp.png" alt="Cooking Icon">
+    </div>
+    <div class="line">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <script>
+    // Animacioni i loading bar
+    let progress = document.querySelector('.progress');
+    let width = 0;
+    let interval = setInterval(() => {
+      width += 1; // sa shpejt mbushet
+      progress.style.width = width + '%';
+      if (width >= 100) {
+        clearInterval(interval);
+        // Ridrejto te menu.html kur mbaron
+        window.location.href = "menu.html";
+      }
+    }, 30); // 30ms për çdo %
+  </script>
+
+</body>
+</html>

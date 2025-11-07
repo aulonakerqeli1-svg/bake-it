@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mix Page</title>
+  <link rel="stylesheet" href="/css/mix.css">
+</head>
+<body>
+  <div class="mix-container">
+
+    <!-- Ikona furres -->
+    <div class="tools">
+      <img src="/assets/oven.png" alt="Oven" class="tool-icon" id="ovenIcon" style="display:none; cursor:pointer;">
+    </div>
+
+    <!-- Tasi me whisk -->
+    <div class="bowl">
+      <img id="bowl" src="/assets/bowl.png" alt="Mixing Bowl">
+      <img id="whisk" src="/assets/mix.png" alt="Whisk" class="whisk" style="display:none; cursor:pointer;">
+    </div>
+
+    <!-- Kartela me përbërësit -->
+    <div class="ingredients-card">
+      <img src="/assets/recipe_pin.png" alt="Pin" class="pin">
+      <div class="ingredients">
+        <img src="/assets/milk.png" alt="Milk" class="ingredient">
+        <img src="/assets/sugar.png" alt="Sugar" class="ingredient">
+        <img src="/assets/eggs.png" alt="Eggs" class="ingredient">
+        <img src="/assets/apple.png" alt="Apple" class="ingredient">
+        <img src="/assets/flour.png" alt="Flour" class="ingredient">
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const ingredients = document.querySelectorAll('.ingredient');
+    const bowl = document.getElementById('bowl');
+    const whisk = document.getElementById('whisk');
+    const ovenIcon = document.getElementById('ovenIcon');
+
+    let addedCount = 0;
+
+    // Kur klikojmë çdo përbërës, e dërgojmë në tas
+    ingredients.forEach(ing => {
+      ing.addEventListener('click', () => {
+        ing.classList.add('fly-to-bowl');
+        addedCount++;
+        setTimeout(() => {
+          ing.style.display = 'none';
+          if (addedCount === ingredients.length) {
+            // Shfaq whisk mbi tas kur të gjithë përbërësit janë hedhur
+            whisk.style.display = 'block';
+          }
+        }, 1000);
+      });
+    });
+
+    // Kur klikohet whisk – përzien brumin
+    whisk.addEventListener('click', () => {
+      bowl.classList.add('shake');
+      setTimeout(() => {
+        bowl.classList.remove('shake');
+        whisk.style.display = 'none'; // whisk zhduket pas përzierjes
+        ovenIcon.style.display = 'block'; // shfaq ikonën e furres
+      }, 2000);
+    });
+
+    // Kur klikohet furra, shko te backen.html
+    ovenIcon.addEventListener('click', () => {
+      window.location.href = 'backen.html';
+    });
+
+    // Kur klikohet furra, shko te backen.html
+ovenIcon.addEventListener('click', () => {
+  const selectedMenu = localStorage.getItem('selectedMenu');
+  // Ruaj se përzierja për këtë recetë është kryer
+  localStorage.setItem('mixDone', selectedMenu);
+  window.location.href = 'backen.html';
+});
+// Kur klikohet furra, shko te backen.html
+ovenIcon.addEventListener('click', () => {
+  const selectedMenu = localStorage.getItem('selectedMenu');
+  const selectedImage = localStorage.getItem('selectedImage');
+
+  // Ruaj që përzierja për këtë ëmbëlsirë është gati
+  localStorage.setItem('mixDone', selectedMenu);
+  localStorage.setItem('mixImage', selectedImage);
+
+  window.location.href = 'backen.html';
+});
+
+  </script>
+</body>
+</html>

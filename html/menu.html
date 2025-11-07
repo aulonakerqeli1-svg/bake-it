@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+  <div class="menu-container">
+    <div class="menu-card">
+      <div class="dot"></div>
+      <h1>Menu</h1>
+      <div class="menu-items">
+
+      <a href="mix.html" class="item" data-menu="applepie" data-img="/assets/menu-applepie.png">
+  <div class="circle">
+    <img src="/assets/menu-applepie.png" alt="Apple Pie">
+  </div>
+  <p>Apple Pie</p>
+</a>
+
+<a href="mix.html" class="item" data-menu="croissant" data-img="/assets/menu-croissant.png">
+  <div class="circle">
+    <img src="/assets/menu-croissant.png" alt="Croissant">
+  </div>
+  <p>Croissant</p>
+</a>
+
+<a href="mix.html" class="item" data-menu="cookies" data-img="/assets/menu-cookie.png">
+  <div class="circle">
+    <img src="/assets/menu-cookie.png" alt="Cookies">
+  </div>
+  <p>Cookies</p>
+</a>
+
+<a href="mix.html" class="item" data-menu="pancake" data-img="/assets/menu-cap.png">
+  <div class="circle">
+    <img src="/assets/menu-cap.png" alt="Pancake">
+  </div>
+  <p>Pancake</p>
+</a>
+
+
+      </div>
+    </div>
+  </div>
+  <script>
+  const menuItems = document.querySelectorAll('.item');
+
+  menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Ruaj emrin dhe foton e zgjedhur
+      const selectedMenu = item.dataset.menu;
+      const selectedImage = item.dataset.img;
+
+      localStorage.setItem('selectedMenu', selectedMenu);
+      localStorage.setItem('selectedImage', selectedImage);
+    });
+  });
+</script>
+
+</body>
+</html>

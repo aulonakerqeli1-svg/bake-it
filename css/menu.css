@@ -1,0 +1,83 @@
+body {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.menu-container {
+  background-color: #fffafa;
+  border-radius: 40px;
+    width: 950px;
+      height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-card {
+  text-align: center;
+  color: #f5a6b5;
+}
+
+.menu-card h1 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.dot {
+  width: 40px;
+  height: 30px;
+  background-color: #f5a6b5;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 110px;
+  height: 110px;
+  border: 2px solid #f5a6b5;
+  border-radius: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffafa;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.circle img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.item p {
+  font-size: 18px;
+  color: #f5a6b5;
+  margin: 0;
+}
+a.item {
+  text-decoration: none; /* heq vizitën e linkut */
+  color: inherit;        /* ruan ngjyrën e tekstit */
+}
+

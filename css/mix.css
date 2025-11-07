@@ -1,0 +1,129 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.mix-container {
+  position: relative;
+  width: 850px;
+  height: 500px;
+  background-image: url("/assets/baking-background.jpg");
+  background-size: cover;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: 3px solid #dfe7ff;
+}
+
+/* Ikonat në anën e majtë */
+.tools {
+  position: absolute;
+  left: 40px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tool-icon {
+  width: 40px;
+  opacity: 0.8;
+  transition: transform 0.3s;
+}
+
+.tool-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Tasi */
+.bowl {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bowl img {
+  width: 200px;
+}
+
+/* Kartela e përbërësve */
+.ingredients-card {
+  position: absolute;
+  right: 60px;
+  top: 80px;
+  width: 220px;
+  height: 330px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.pin {
+  position: absolute;
+  top: -25px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 50px;
+}
+
+/* Përbërësit */
+.ingredients {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  justify-items: center;
+  align-items: center;
+  padding: 70px 20px 20px;
+}
+
+.ingredients img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 1s ease, opacity 1s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+/* 🔄 Animacioni i tundjes së tasit */
+@keyframes shake {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  20% { transform: translateX(-50%) rotate(5deg); }
+  40% { transform: translateX(-50%) rotate(-5deg); }
+  60% { transform: translateX(-50%) rotate(4deg); }
+  80% { transform: translateX(-50%) rotate(-4deg); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out 3;
+}
+
+/* Efekti i fluturimit të përbërësve drejt tasit */
+@keyframes flyToBowl {
+  0% { transform: translate(0, 0) scale(1); opacity:1; }
+  100% { transform: translate(-50px, 100px) scale(0.3); opacity:0; }
+}
+
+.fly-to-bowl {
+  animation: flyToBowl 1s forwards;
+}
+/* Whisk brenda tasit */
+.whisk {
+  position: absolute;
+  bottom: 120px; /* vendos mbi brumin në tas */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  z-index: 2;
+  transition: transform 0.3s;
+}
+.whisk:hover {
+  transform: translateX(-50%) rotate(-15deg);
+  cursor: pointer;
+}

@@ -1,0 +1,51 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff7f8;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.backen-container {
+  text-align: center;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 60px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 950px;
+  height: 500px;
+}
+
+h1 {
+  color: #f48b94;
+  margin-bottom: 30px;
+}
+
+.dish-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  background-color: #f6c6c8;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #f8b5b8;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backen</title>
+  <link rel="stylesheet" href="/css/backen.css">
+</head>
+<body>
+  <div class="backen-container">
+    <h1>🎉 Bravo, you did it! 🎂</h1>
+    <img id="resultImage" alt="Finished Dish" class="dish-image">
+    <div class="buttons">
+      <button id="restartBtn">🔁 Restart</button>
+      <button id="logoutBtn">🚪 Logout</button>
+    </div>
+  </div>
+
+  <script>
+    const selectedImage = localStorage.getItem('mixImage');
+    const image = document.getElementById('resultImage');
+
+    // Vendos direkt imazhin që është zgjedhur nga menu
+    if (selectedImage) {
+      image.src = selectedImage;
+    } else {
+      image.src = 'assets/default_dessert.png';
+    }
+
+    // Butonat
+    document.getElementById('restartBtn').addEventListener('click', () => {
+      localStorage.removeItem('mixDone');
+      window.location.href = 'loading.html';
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

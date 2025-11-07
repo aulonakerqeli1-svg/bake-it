@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #ffffff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 950px;
+  height: 500px;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Ana e majtë --- */
+.left {
+  width: 45%;
+  background: url('/assets/login-right.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.left img {
+  width: 230px;
+  position: absolute;
+  left: 80%;
+  z-index: 2;
+}
+
+/* --- Ana e djathtë --- */
+.right {
+  width: 55%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+}
+
+.right h2 {
+  text-transform: uppercase;
+  color: #f1c4c3;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+input {
+  width: 250px;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #f5c7cc;
+  border-radius: 25px;
+  text-align: center;
+  color: #000;
+  font-size: 14px;
+  outline: none;
+  letter-spacing: 1px;
+  background-color: #f6f8ff;
+}
+
+input::placeholder {
+  color: #f3c4c9;
+}
+
+button {
+  width: 120px;
+  padding: 12px;
+  background-color: #f1c4c3;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #e7aeb0;
+}
+
+/* --- Për telefon --- */
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+  }
+
+  .left {
+    width: 100%;
+    height: 250px;
+  }
+
+  .right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .left img {
+    width: 180px;
+  }
+}
